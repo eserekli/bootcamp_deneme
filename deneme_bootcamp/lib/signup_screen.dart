@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -120,8 +121,16 @@ class _RegisterPageState extends State<RegisterPage> {
         email: _emailController.text.trim(),
         password: _passwordController.text.trim(),
       );
-      // Kayıt işlemi başarılı, kullanıcı oluşturuldu.
-      // İstediğiniz işlemleri gerçekleştirebilirsiniz.
+      // Kullanıcının Firestore'daki döküman yolunu oluşturun
+    String uid = userCredential.user!.uid;
+    DocumentReference userDocRef = FirebaseFirestore.instance.collection('users').doc(uid);
+
+    // Firestore dökümanını oluşturun
+    await userDocRef.set({
+      'email': userCredential.user!.email,
+      'isUser': 'isUser=true', // Kullanıcının adını veya diğer bilgileri buraya ekleyebilirsiniz
+    });
+
     } catch (e) {
       // Kayıt işlemi başarısız oldu.
       // Hata mesajını ekrana veya konsola yazdırabilirsiniz.
