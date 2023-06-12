@@ -1,5 +1,6 @@
 import 'package:deneme_bootcamp/login_screen.dart';
 import 'package:deneme_bootcamp/signup_screen.dart';
+import 'package:deneme_bootcamp/vet_signup.screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -85,7 +86,12 @@ class _MyHomePageState extends State<MyHomePage> {
               Navigator.push(context, MaterialPageRoute(builder: ((context) {
                 return LoginScreen();
               })));
-            }, child: Text("giriş"),)
+            }, child: Text("giriş"),),
+             ElevatedButton(onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: ((context) {
+                return VetRegisterPage();
+              })));
+            }, child: Text("Vet kayıt"),)
           ],
         ),
         

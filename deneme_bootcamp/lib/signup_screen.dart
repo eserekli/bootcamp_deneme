@@ -128,7 +128,7 @@ class _RegisterPageState extends State<RegisterPage> {
     // Firestore dökümanını oluşturun
     await userDocRef.set({
       'email': userCredential.user!.email,
-      'isUser': 'isUser=true', // Kullanıcının adını veya diğer bilgileri buraya ekleyebilirsiniz
+      'isUser': 'true', // Kullanıcının adını veya diğer bilgileri buraya ekleyebilirsiniz
     });
 
     } catch (e) {
