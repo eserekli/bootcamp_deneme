@@ -22,5 +22,8 @@ class TemaPage {
         ),
       ),
     ),
-  );
+    //elevatedButtonTheme: ElevatedButtonTheme( colo
+      
+    );
+  
 }
