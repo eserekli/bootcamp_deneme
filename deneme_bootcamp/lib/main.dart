@@ -3,6 +3,8 @@ import 'package:deneme_bootcamp/signup_screen.dart';
 import 'package:deneme_bootcamp/vet_signup.screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'UI/tema.dart';
+
 
 
 void main() async {
@@ -19,11 +21,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-      
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      theme: TemaPage.tema,
+      home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
