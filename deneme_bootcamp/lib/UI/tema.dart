@@ -4,8 +4,11 @@ class TemaPage {
   static ThemeData tema = ThemeData(
     primaryColor: Colors.red, // Uygulamanın başlık çubuğu, düğmeler ve sekmelerin rengi olarak kullanılır.
     accentColor: Colors.green, // İkincil bir vurgu rengi olarak kullanılır, örneğin kaydırma çubuğu veya seçili öğelerde kullanılabilir.
-    brightness: Brightness.light, // Uygulama arka planının ve genel olarak ne kadar parlak olduğunu belirtir.
+    brightness: Brightness.dark, // Uygulama arka planının ve genel olarak ne kadar parlak olduğunu belirtir.
     scaffoldBackgroundColor: Colors.white, // Scaffold'ın arka plan rengidir.
+    buttonTheme: ButtonThemeData(
+      buttonColor: Colors.red,
+    ),
     fontFamily: 'Poppins', // Yazı tiplerini belirler, örneğin başlık, düğme veya metin stillerinde kullanılır.
     appBarTheme: AppBarTheme(
       color: Colors.red, // Başlık çubuğunun rengi
