@@ -11,59 +11,45 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'My App',
       theme: theme(), // Uygulama temasını kullanın
-      home: HomePage(),
+      home: LoginPage(), // Kullanıcı giriş sayfasını ana sayfa olarak belirleyin
     );
   }
 }
 
-class HomePage extends StatelessWidget {
+class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Ana Sayfa'),
+        title: Text('Kullanıcı Girişi'), // Sayfa başlığı
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Başlık Yazısı',
-              style: TextStyle(fontSize: 24),
-            ),
-            SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text('Button 1'),
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text('Button 2'),
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text('Button 3'),
-            ),
-          ],
-        ),
-      ),
-      bottomNavigationBar: BottomAppBar(
-        child: Container(
-          height: 50,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        child: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.home),
+              TextField(
+                decoration: InputDecoration(
+                  labelText: 'Kullanıcı Adı',
+                ),
               ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.person),
+              SizedBox(height: 16),
+              TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  labelText: 'Şifre',
+                ),
               ),
-              IconButton(
+              SizedBox(height: 16),
+              ElevatedButton(
                 onPressed: () {},
-                icon: Icon(Icons.settings),
+                child: Text('Giriş Yap'), // Düğme metni
+              ),
+              SizedBox(height: 16),
+              TextButton(
+                onPressed: () {},
+                child: Text('Üye Ol'), // Üye ol butonu metni
               ),
             ],
           ),
